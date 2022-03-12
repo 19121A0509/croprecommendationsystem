@@ -3,7 +3,6 @@
 from flask import Flask, render_template, request, Markup
 import numpy as np
 import pandas as pd
-import utils
 from utils.disease import disease_dic
 from utils.fertilizer import fertilizer_dic
 import requests
@@ -127,7 +126,7 @@ def predict_image(img, model=disease_model):
 # ------------------------------------ FLASK APP -------------------------------------------------
 
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='')
 
 # render home page
 
